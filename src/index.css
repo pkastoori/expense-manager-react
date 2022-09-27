@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter';
+    font-weight: 500;
+    background-color: rgb(248, 244, 244);
+    color: rgb(68, 62, 62);
+}
