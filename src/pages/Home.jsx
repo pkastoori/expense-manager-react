@@ -8,7 +8,7 @@ export const Home = () => {
     <div className="grid md:grid-cols-2 px-2 py-2">
       <SpendByCategory />
       <SpendByMonths />
-      {/* <SpendByOrdered /> */}
+      <SpendByOrdered />
       <TopTenSpends />
     </div>
   );

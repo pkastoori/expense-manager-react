@@ -4,6 +4,7 @@ import * as yup from "yup";
 import { FormInput } from "../Shared/Form/FormInput";
 import { SelectInput } from "../Shared/Form/SelectInput";
 import { TabTitle } from "../Shared/TabTitle";
+import { useCategoriesStore } from "../../store/categoryStore";
 
 const expenseSchema = yup.object({
   name: yup
@@ -20,9 +21,10 @@ const expenseSchema = yup.object({
 
 export default function ExpenseForm() {
   const navigation = useNavigate();
+  const categories = useCategoriesStore((state) => state.categories);
 
   const initialValues = {
-    category: "vegetables",
+    category: categories[0]?.name,
     name: "",
     price: "",
     quantity: "",
@@ -48,7 +50,7 @@ export default function ExpenseForm() {
         {(formik) => {
           return (
             <Form className="w-full mt-2">
-              <SelectInput name="category" />
+              <SelectInput name="category" options={categories} />
               <FormInput name="name" type="text" placeholder="Name" />
               <FormInput name="quantity" type="text" placeholder="Quantity" />
               <FormInput type="number" name="price" placeholder="Price" />

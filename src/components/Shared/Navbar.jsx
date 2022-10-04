@@ -9,10 +9,7 @@ export const Navbar = () => {
 
   return (
     <nav className="sm:col-span-1">
-      <Link
-        to="/"
-        className="flex justify-between items-center sm:justify-center"
-      >
+      <Link className="flex justify-between items-center sm:justify-center">
         <h2 className="p-6 text-center font-bold text-lg">Expense Manager</h2>
         <MdMenu
           className="inline mr-10 sm:hidden"
